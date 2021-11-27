@@ -1,0 +1,13 @@
+# Exclude all
+**
+
+!package.json
+!yarn.lock
+!src
+!tests
+!configs
+!.babelrc
+!express.js
+
+
+

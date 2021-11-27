@@ -1,0 +1,17 @@
+version: "3.8"
+# Leaving this around for the day I get to try it out on linux.
+# This style of voluming doesn't work for MacOS+Windows due to performance issues.
+services:
+  web:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./:/srv/app
+      - ./yarn-cache:/.cache/yarn
+      - ./.global_yarnrc:/.yarnrc
+    ports:
+      - "${WEBSERVER_PORT:-0}:8080"
+    # Allow files created inside the container to be made
+    # with the current user. See ./run.sh for env var definition
+    user: ${CURRENT_UID:-?}

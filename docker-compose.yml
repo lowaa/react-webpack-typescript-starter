@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./src/:/srv/app/src
+      - ./configs/:/srv/app/configs
+      - ./tests:/srv/app/tests
+    ports:
+      - "${WEBSERVER_PORT:-0}:8080"
+    # Allow files created inside the container to be made
+    # with the current user. See ./run.sh for env var definition
+    user: ${CURRENT_UID:-?}
