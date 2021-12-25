@@ -1,5 +1,5 @@
-# React Webpack Typescript Starter
-> Minimal starter with hot module replacement (HMR) for rapid development.
+# React Webpack Typescript Starter + Docker
+> Minimal starter with hot module replacement (HMR) for rapid development + Docker
 
 * **[React](https://facebook.github.io/react/)** (17.x)
 * **[Webpack](https://webpack.js.org/)** (5.x)
@@ -11,12 +11,13 @@
 * Code linting ([ESLint](https://github.com/eslint/eslint)) and formatting ([Prettier](https://github.com/prettier/prettier))
 * Test framework ([Jest](https://facebook.github.io/jest/))
 
-## Installation
-1. Clone/download repo
-2. `yarn install` (or `npm install` for npm)
-
 ## Usage
+
+Everything is dockerized
+
 **Development**
+
+./yarn_run.sh start-dev
 
 `yarn run start-dev`
 
@@ -25,7 +26,7 @@
 
 **Production**
 
-`yarn run start-prod`
+./yarn_run.sh start-prod
 
 * Build app once (HMR disabled) to `/dist/`
 * App served @ `http://localhost:3000`
@@ -43,8 +44,6 @@ Command | Description
 `yarn run lint` | Run linter
 `yarn run lint --fix` | Run linter and fix issues
 `yarn run start` | (alias of `yarn run start-dev`)
-
-**Note**: replace `yarn` with `npm` in `package.json` if you use npm.
 
 ## See also
 * [React Webpack Babel Starter](https://github.com/vikpe/react-webpack-babel-starter)
